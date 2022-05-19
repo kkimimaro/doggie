@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Doggie - Sign Up</title>
+    <link rel="icon" href="../images/doggieIcon.png">
+    <link href="../css/bootstrap.min.css" rel="stylesheet" /> <!-- https://getbootstrap.com/ -->
+    <link href="../fontawesome/css/all.min.css" rel="stylesheet" /> <!-- https://fontawesome.com/ -->
+    <link href="../css/logreg.css" rel="stylesheet" /></head>
+<div class="tm-container">
+    <div>
+        <div class="wrapper fadeInDown">
+            <div id="formContent">
+                <h1>REGISTRATION</h1>
+                <div class="fadeIn first">
+                    <img class="logoImg" src="../images/doggieLogoWBGRS.png" width="100"
+                         alt="Logo" onclick="location.href='/'"/>
+                </div>
+
+                <h3>
+                    {{#message}}
+                        {{message}}
+                    {{/message}}
+                </h3>
+
+                <form action="/registration" method="post">
+                    <input type="text" class="fadeIn second" required="" placeholder="login" name="username">
+                    <input type="text" class="fadeIn third" required="" placeholder="password" name="password">
+                    <input type="email" class="fadeIn fourth" name="email" required="" placeholder="some@some.com"/>
+                    <input type="text" class="fadeIn second" required="" placeholder="name" name="name">
+                    <input type="text" class="fadeIn second" required="" placeholder="surname" name="surname">
+                        <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+                    <input class="fadeIn fourth" type="submit" name="register" value="SIGN UP" target="_blank">
+                    <input class="fadeIn fifth" type="reset" value="RESET">
+                    <input class="fadeIn sixth" type="button" onClick='location.href="/login"' name="back" value="GO BACK">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <video autoplay muted loop id="myVideo">
+        <source src="../video/videoBack2.mp4" type="video/mp4">
+    </video>
+</div>
+<script src="../js/jquery-3.4.1.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/jquery.backstretch.min.js"></script>
+
+</body>
+</html>

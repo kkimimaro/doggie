@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Doggie - Contact</title>
+    <link rel="icon" href="../images/doggieIcon.png">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" /> <!-- https://fonts.google.com/ -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet" /> <!-- https://getbootstrap.com/ -->
+    <link href="../fontawesome/css/all.min.css" rel="stylesheet" /> <!-- https://fontawesome.com/ -->
+    <link href="../css/font.css" rel="stylesheet" />
+    <link href="../css/templatemo-diagoona.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="tm-container">
+        <div>
+            <div class="tm-row pt-4">
+                <div class="tm-col-left">
+                    <div class="tm-site-header media">
+                        <img class="logoImg" src="../images/doggieLogoWBGRS.png" width="100"
+                             alt="Logo" onclick="location.href='/'"/>
+                    </div>
+                </div>
+                <div class="tm-col-right">
+                    <nav class="navbar navbar-expand-lg" id="tm-main-nav">
+                        <button class="navbar-toggler toggler-example mr-0 ml-auto" type="button" 
+                            data-toggle="collapse" data-target="#navbar-nav" 
+                            aria-controls="navbar-nav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span><i class="fas fa-bars"></i></span>
+                        </button>
+                        <div class="collapse navbar-collapse tm-nav" id="navbar-nav">
+                            <ul class="navbar-nav text-uppercase">
+                                <li class="nav-item">
+                                    <a class="nav-link tm-nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link tm-nav-link" href="/meal">Meal</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link tm-nav-link" href="/training">Training</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link tm-nav-link" href="/about">About</a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link tm-nav-link" href="/contact">Contact</a>
+                                </li>
+                                {{#nickname}}
+                                    <li class="nav-item">
+                                        <a class="nav-link tm-nav-link" href="/profile">Profile</a>
+                                    </li>
+                                {{/nickname}}
+                                {{^nickname}}
+                                    <li class="nav-item">
+                                        <a class="nav-link tm-nav-link" href="/login">Sign In</a>
+                                    </li>
+                                {{/nickname}}
+                            </ul>                            
+                        </div>                        
+                    </nav>
+                </div>
+            </div>
+            
+            <div class="tm-row">
+                <div class="tm-col-left">
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+                    <div class="icon-bar">
+                        <a href="https://www.facebook.com/profile.php?id=100007050319427" class="facebook"><i class="fa fa-facebook"></i></a>
+                        <a href="https://github.com/kkimimaro" class="github"><i class="fa fa-github"></i></a>
+                        <a href="https://www.instagram.com/dnlzv/"><i class="fa fa-instagram"></i></a>
+                    </div>
+                </div>
+                <main class="tm-col-right tm-contact-main"> <!-- Content -->
+                    <section class="tm-content tm-contact">
+                        {{#nickname}}
+                            {{#name}}
+                                <h1 class="mb-5 tm-content-title">Свяжитесь с Doggie, {{name}}!</h1>
+                            {{/name}}
+                            {{^name}}
+                                <h1 class="mb-5 tm-content-title">Свяжитесь с Doggie, {{nickname}}</h1>
+                            {{/name}}
+                        {{/nickname}}
+                        {{^nickname}}
+                            <h1 class="mb-4 tm-content-title">Свяжитесь с Doggie</h1>
+                        {{/nickname}}
+                        <form id="contact-form" action="/contact" method="POST">
+                            {{#successMessage}}
+                                <h2 class="mb-4 tm-content-title">{{successMessage}}</h2>
+                            {{/successMessage}}
+                            {{^successMessage}}
+                                <!--nothing-->
+                            {{/successMessage}}
+                            <div class="form-group mb-4">
+                                <input type="text" name="name" placeholder="Имя" required=""/>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" placeholder="Email" required=""/>
+                            </div>
+                            <div class="form-group">
+                                <textarea rows="3" cols="50" name="message" placeholder="Введите сообщение..." required=""></textarea>
+                            </div>
+                                <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+                            <div style="margin-left: 50px; margin-bottom: 20px">
+                                <button class="btn effect01" type="submit" target="_blank"><span>Отправить</span></button>
+                            </div>
+                        </form>
+                    </section>
+                </main>
+            </div>
+        </div>
+
+        <video autoplay muted loop id="myVideo">
+            <source src="../video/videoBack3.mp4" type="video/mp4">
+        </video>
+
+        <div class="tm-bg"> <!-- Diagonal background design -->
+            <div class="tm-bg-left"></div>
+            <div class="tm-bg-right"></div>
+        </div>
+    </div>
+
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.backstretch.min.js"></script>
+</body>
+</html>

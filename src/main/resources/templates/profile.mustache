@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Doggie - {{nickname}}</title>
+    <link rel="icon" href="../images/doggieIcon.png">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" /> <!-- https://fonts.google.com/ -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet" /> <!-- https://getbootstrap.com/ -->
+    <link href="../fontawesome/css/all.min.css" rel="stylesheet" /> <!-- https://fontawesome.com/ -->
+    <link href="../css/templatemo-diagoona.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="tm-container">        
+        <div>
+            <div class="tm-row pt-4">
+                <div class="tm-col-left">
+                    <div class="tm-site-header media">
+                    </div>
+                </div>
+                <div class="tm-col-right">
+                    <nav class="navbar navbar-expand-lg" id="tm-main-nav">
+                        <button class="navbar-toggler toggler-example mr-0 ml-auto" type="button" 
+                            data-toggle="collapse" data-target="#navbar-nav" 
+                            aria-controls="navbar-nav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span><i class="fas fa-bars"></i></span>
+                        </button>
+                        <div class="collapse navbar-collapse tm-nav" id="navbar-nav">
+                            <ul class="navbar-nav text-uppercase">
+                                <li class="nav-item">
+                                    <a class="nav-link tm-nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link tm-nav-link" href="/meal">Meal</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link tm-nav-link" href="/training">Training</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link tm-nav-link" href="/about">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link tm-nav-link" href="/contact">Contact</a>
+                                </li>
+                                {{#nickname}}
+                                    <form action="/logout" method="post">
+                                        <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+                                        <li class="nav-item">
+                                            <input type="submit" id="out"/>
+                                            <label class="nav-link tm-nav-link" for="out">Sign Out</label>
+                                        </li>
+                                    </form>
+                                {{/nickname}}
+                                {{^nickname}}
+                                    <li class="nav-item">
+                                        <a class="nav-link tm-nav-link" href="/login">Sign In</a>
+                                    </li>
+                                {{/nickname}}
+                            </ul>                            
+                        </div>                        
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <div class="wrapper fadeInDown">
+            <div id="formProfile">
+                <h1>Профиль пользователя {{nickname}}</h1>
+
+                <div class="d-flex justify-content-center flex-column">
+                    <div class="image d-flex flex-column justify-content-sm-around align-items-center">
+                        <img src="../images/doggieLogoWBGRS.png" height="100" width="100" />
+                        <span>{{name}} {{surname}}</span>
+                        <span>{{email}}</span>
+                    </div>
+                    {{^pets}}
+                        <span class="name mt-3">Нет питомцев</span>
+                    {{/pets}}
+                    <div class="d-flex justify-content-around flex-wrap align-items-center">
+                    {{#pets}}
+                        <div class="pet image d-flex flex-column justify-content-sm-around align-items-center">
+                            <img src="../images/petPic.png" height="100" width="100" />
+
+                            <table>
+                                <tr>
+                                    <th>Имя</th>
+                                    <td>{{name}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Порода</th>
+                                    <td>{{poroda}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Возраст</th>
+                                    <td>{{age}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Рост</th>
+                                    <td>{{rost}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Вес</th>
+                                    <td>{{ves}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Активность</th>
+                                    <td>{{activity}}</td>
+                                </tr>
+                            </table>
+                            <div class="d-flex flex-row justify-content-around">
+                                <a id="editBtn" href="/pet/{{id}}"><span>Изменить</span></a>
+                                <a id="editBtn" href="/pet/delete/{{id}}"><span>Удалить</span></a>
+                            </div>
+                        </div>
+                    {{/pets}}
+                    </div>
+                    <div>
+                        <a class="btn effect01" onClick='location.href="/pet/post"'><span>Добавить</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <video autoplay muted loop id="myVideo">
+            <source src="../video/videoBack4.mp4" type="video/mp4">
+        </video>
+
+    </div>
+
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.backstretch.min.js"></script>
+</body>
+
+</html>

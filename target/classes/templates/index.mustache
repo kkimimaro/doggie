@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Doggie - Home</title>
+    <link rel="icon" href="../images/doggieIcon.png">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" /> <!-- https://fonts.google.com/ -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet" /> <!-- https://getbootstrap.com/ -->
+    <link href="../fontawesome/css/all.min.css" rel="stylesheet" /> <!-- https://fontawesome.com/ -->
+    <link href="../css/font.css" rel="stylesheet" />
+    <link href="../css/templatemo-diagoona.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="tm-container">        
+        <div>
+            <div class="tm-row pt-4">
+                <div class="tm-col-left">
+                    <div class="tm-site-header media">
+                        <img class="logoImg" src="../images/doggieLogoWBGRS.png" width="100"
+                             alt="Logo" onclick="location.href='/'"/>
+                    </div>
+                </div>
+                <div class="tm-col-right">
+                    <nav class="navbar navbar-expand-lg" id="tm-main-nav">
+                        <button class="navbar-toggler toggler-example mr-0 ml-auto" type="button" 
+                            data-toggle="collapse" data-target="#navbar-nav" 
+                            aria-controls="navbar-nav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span><i class="fas fa-bars"></i></span>
+                        </button>
+                        <div class="collapse navbar-collapse tm-nav" id="navbar-nav">
+                            <ul class="navbar-nav text-uppercase">
+                                <li class="nav-item active">
+                                    <a class="nav-link tm-nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link tm-nav-link" href="/meal">Meal</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link tm-nav-link" href="/training">Training</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link tm-nav-link" href="/about">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link tm-nav-link" href="/contact">Contact</a>
+                                </li>
+                                {{#nickname}}
+                                    <li class="nav-item">
+                                        <a class="nav-link tm-nav-link" href="/profile">Profile</a>
+                                    </li>
+                                {{/nickname}}
+                                {{^nickname}}
+                                    <li class="nav-item">
+                                        <a class="nav-link tm-nav-link" href="/login" id="loginBtn">Sign In</a>
+                                    </li>
+                                {{/nickname}}
+                            </ul>                            
+                        </div>                        
+                    </nav>
+                </div>
+            </div>
+            
+            <div class="tm-row">
+                <div class="tm-col-left"></div>
+                <main class="tm-col-right">
+                    <section class="tm-content">
+                        {{#nickname}}
+                            {{#name}}
+                                <h1 class="mb-5 tm-content-title">Здравствуйте, {{name}}!</h1>
+                            {{/name}}
+                            {{^name}}
+                                <h1 class="mb-5 tm-content-title">Здравствуйте, {{nickname}}!</h1>
+                            {{/name}}
+                        {{/nickname}}
+                        {{^nickname}}
+                            <h1 class="mb-5 tm-content-title">Здравствуйте, Гость!</h1>
+                        {{/nickname}}
+                        <h2>Что такое Doggie?</h2>
+                        <p>Doggie - это приложение для владельцев домашних животных
+                            <br>
+                            Мы поможем вам составить индивидуальный план тренировок и питания, используя знания экспертов в области ветеринарии и кинологии</p>
+
+                        <div style="margin-left: 120px;">
+                            <a class="btn effect01" onClick='location.href="/about"' target="_blank"><span>Подробнее</span></a>
+                        </div>
+                    </section>
+                </main>
+            </div>
+        </div>
+
+        <video autoplay muted loop id="myVideo">
+            <source src="../video/videoBack3.mp4" type="video/mp4">
+        </video>
+
+        <!-- Diagonal background design -->
+        <div class="tm-bg">
+            <div class="tm-bg-left"></div>
+            <div class="tm-bg-right"></div>
+        </div>
+    </div>
+
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.backstretch.min.js"></script>
+</body>
+</html>

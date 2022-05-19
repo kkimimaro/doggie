@@ -1,0 +1,164 @@
+<!DOCTYPE HTML>
+<html lang="ru-RU">
+<head>
+    <title>Doggie - Meal</title>
+    <link rel="icon" href="../images/doggieIcon.png">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" /> <!-- https://fonts.google.com/ -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet" /> <!-- https://getbootstrap.com/ -->
+    <link href="../fontawesome/css/all.min.css" rel="stylesheet" /> <!-- https://fontawesome.com/ -->
+    <link href="../css/font.css" rel="stylesheet" />
+    <link href="../css/error.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4b9ba14b0f.js" crossorigin="anonymous"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="../css/templatemo-diagoona.css" rel="stylesheet" />
+    <style>
+        th, td {
+            font-size: 1em!important;
+        }
+        .rec {
+            width: 36%!important;
+            padding: 30px!important;
+        }
+    </style>
+</head>
+<body>
+<div class="tm-container">
+    <div>
+        <div class="tm-row pt-4">
+            <div class="tm-col-left">
+                <div class="tm-site-header media">
+                    <img class="logoImg" src="../images/doggieLogoWBGRS.png" width="100"
+                         alt="Logo" onclick="location.href='/'"/>
+                </div>
+
+            </div>
+
+            <div class="tm-col-right">
+                <nav class="navbar navbar-expand-lg" id="tm-main-nav">
+                    <button class="navbar-toggler toggler-example mr-0 ml-auto" type="button"
+                            data-toggle="collapse" data-target="#navbar-nav"
+                            aria-controls="navbar-nav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span><i class="fas fa-bars"></i></span>
+                    </button>
+                    <div class="collapse navbar-collapse tm-nav" id="navbar-nav">
+                        <ul class="navbar-nav text-uppercase">
+                            <li class="nav-item">
+                                <a class="nav-link tm-nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link tm-nav-link" href="/meal">Meal</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link tm-nav-link" href="/training">Training</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link tm-nav-link" href="/about">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link tm-nav-link" href="/contact">Contact</a>
+                            </li>
+                            {{#nickname}}
+                                <li class="nav-item">
+                                    <a class="nav-link tm-nav-link" href="/profile">Profile</a>
+                                </li>
+                            {{/nickname}}
+                            {{^nickname}}
+                                <li class="nav-item">
+                                    <a class="nav-link tm-nav-link" href="/login">Sign In</a>
+                                </li>
+                            {{/nickname}}
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="wrapper">
+        <div id="formPlan" class="d-flex flex-column justify-content-around align-items-center">
+            {{#pet}}
+                <div class="d-flex flex-column justify-content-around align-items-center w-100">
+                    <h1>План питания для {{pet}}</h1>
+                    <h2>{{mealPriority}}</h2>
+                    <div class="d-flex justify-content-around flex-wrap align-items-center">
+                        <div class="rec d-flex flex-column justify-content-sm-around align-items-center">
+                            <table>
+                                <tr><th colspan="2">Понедельник</th></tr>
+                                <tr><th>1-й прием пищи</th><td>говяжье или баранье мясное ассорти, кабачок, тыква, зелень</td></tr>
+                                <tr><th>2-й прием пищи</th><td>говяжье или баранье мясное ассорти, яблочко, огурчик, рис, масло сельди</td></tr>
+                            </table>
+                        </div>
+                        <div class="rec d-flex flex-column justify-content-sm-around align-items-center">
+                            <table>
+                                <tr><th colspan="2">Вторник</th></tr>
+                                <tr><th>1-й прием пищи</th><td>творог, сметана, банан, немного мёда (если нет аллергии на данный продукт)</td></tr>
+                                <tr><th>2-й прием пищи</th><td>индейка или говядина, огурчик, тыква, зелень</td></tr>
+                            </table>
+                        </div>
+                        <div class="rec d-flex flex-column justify-content-sm-around align-items-center">
+                            <table>
+                                <tr><th colspan="2">Среда</th></tr>
+                                <tr><th>1-й прием пищи</th><td>говяжье или баранье мясное ассорти, огурчик, морковка, тыква, немного риса, пророщенная пшеница</td></tr>
+                                <tr><th>2-й прием пищи</th><td>индейка или говядина, огурчик, тыква, зелень, рис</td></tr>
+                            </table>
+                        </div>
+                        <div class="rec d-flex flex-column justify-content-sm-around align-items-center">
+                            <table>
+                                <tr><th colspan="2">Четверг</th></tr>
+                                <tr><th>1-й прием пищи</th><td>говяжье или баранье мясное ассорти, морковка, кабачок, листовой салат, немного риса, лососевое масло</td></tr>
+                                <tr><th>2-й прием пищи</th><td>сырые индюшачьи шеи</td></tr>
+                            </table>
+                        </div>
+                        <div class="rec d-flex flex-column justify-content-sm-around align-items-center">
+                            <table>
+                                <tr><th colspan="2">Пятница</th></tr>
+                                <tr><th>1-й прием пищи</th><td>говяжье или баранье мясное ассорти, огурчик, яблоко, листовой салат, рис</td></tr>
+                                <tr><th>2-й прием пищи</th><td>морская рыба (минтай или треска), кабачок, яблочко, зелень, отруби</td></tr>
+                            </table>
+                        </div>
+                        <div class="rec d-flex flex-column justify-content-sm-around align-items-center">
+                            <table>
+                                <tr><th colspan="2">Суббота</th></tr>
+                                <tr><th>1-й прием пищи</th><td>творог, сметана, курага</td></tr>
+                                <tr><th>2-й прием пищи</th><td>говяжье мясное ассорти (обрезь, селезёнка, сердце), тыква, кабачок, зелень, рис</td></tr>
+                            </table>
+                        </div>
+                        <div class="rec d-flex flex-column justify-content-sm-around align-items-center">
+                            <table>
+                                <tr><th colspan="2">Воскресенье</th></tr>
+                                <tr><th>1-й прием пищи</th><td>говяжье мясное ассорти (обрезь, селезёнка, сердце), кабачок, яблочко, зелень, отруби</td></tr>
+                                <tr><th>2-й прием пищи</th><td>индейка (голень), тыква, яблочко, огурчик, зелень, рис</td></tr>
+                            </table>
+                        </div>
+                    </div>
+                    <h3>*Рассчитывайте каждый прием пищи на 390-450 гр. продуктов</h3>
+
+                    <img class="defaultImage" src="../images/doggieMeal.png" alt="текст"/>
+                    {{#image}}
+                        <a id="qrDownloadBtn" href="../images/{{image}}.jpg" download title="training"><span>Скачать</span></a>
+                    {{/image}}
+                </div>
+            {{/pet}}
+            {{^pet}}
+                <div class="mainbox">
+                    <i class="far fa-question-circle fa-spin"></i>
+                    <div class="msg">Упс... не удалось подобрать план<p>Пройдите <a href="/">на базу</a> и попробуйте начать сначала.</p></div>
+                </div>
+            {{/pet}}
+        </div>
+    </div>
+
+    <video autoplay muted loop id="myVideo">
+        <source src="../video/videoBack1.mp4" type="video/mp4">
+    </video>
+
+</div>
+
+<script src="../js/jquery-3.4.1.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/jquery.backstretch.min.js"></script>
+
+</body>
+</html>

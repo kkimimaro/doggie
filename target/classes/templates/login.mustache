@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<head>
+    <title>Doggie - Sign In</title>
+    <link rel="icon" href="../images/doggieIcon.png">
+    <link href="../css/bootstrap.min.css" rel="stylesheet" /> <!-- https://getbootstrap.com/ -->
+    <link href="../fontawesome/css/all.min.css" rel="stylesheet" /> <!-- https://fontawesome.com/ -->
+    <link href="../css/logreg.css" rel="stylesheet" />
+</head>
+<body>
+<div class="tm-container">
+    <div>
+        <div class="wrapper fadeInDown">
+            <div id="formContent">
+                <h1>AUTHORIZATION</h1>
+                <div class="fadeIn first">
+                    <img class="logoImg" src="../images/doggieLogoWBGRS.png" width="100"
+                         alt="Logo" onclick="location.href='/'"/>
+                </div>
+
+                <h3>
+                    {{#message}}
+                        {{message}}
+                    {{/message}}
+                </h3>
+
+                <form action="/login" method="post">
+                    <input type="text" class="fadeIn second" required placeholder="login" name="username">
+                    <input type="password" class="fadeIn third" required placeholder="password" name="password">
+                    <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+                    <input class="fadeIn fourth" type="submit" name="login" value="LOG IN" target="_blank">
+                    <input class="fadeIn fifth" type="reset" value="RESET">
+                    <input class="fadeIn sixth" type="button" onClick='location.href="/registration"' name="reg" value="REGISTRATION">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <video autoplay muted loop id="myVideo">
+        <source src="../video/videoBack2.mp4" type="video/mp4">
+    </video>
+</div>
+
+<script src="../js/jquery-3.4.1.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/jquery.backstretch.min.js"></script>
+
+</body>
+</html>
