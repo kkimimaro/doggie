@@ -42,7 +42,7 @@ public class UserService implements UserDetailsService {
         if (!StringUtils.isEmpty(user.getEmail())) {
             String message = String.format(
                     "Добро пожаловать в Doggie, %s! \n" +
-                            "Пожалуйста, перейдите по следующей ссылке, чтобы подтвердить вашу почту: http://localhost:8080/activate/%s",
+                            "Пожалуйста, перейдите по следующей ссылке, чтобы подтвердить вашу почту: https://doggiehomeapp.herokuapp.com/activate/%s",
                     user.getUsername(),
                     user.getActivationCode()
             );
